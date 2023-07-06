@@ -26,7 +26,7 @@
 
 ####
 
-##### A Trello board was used to keep track of development progress and can be viewed here [trello] (https://trello.com/b/nOvvsduE/capstone-project)
+##### A Trello board was used to keep track of development progress and can be viewed here [trello](https://trello.com/b/nOvvsduE/capstone-project)
 
 ---
 
