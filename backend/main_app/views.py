@@ -11,3 +11,10 @@ def about(request):
 
 def extensions(request):
     return render(request, 'extensions.html')
+
+
+def customers_index(request):
+    customers = Customer.objects.all()
+    return render(request, 'customers/index.html', {
+        'customers': customers
+    })
