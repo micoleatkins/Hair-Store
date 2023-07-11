@@ -1,0 +1,20 @@
+body{
+  background-color: brown;
+}
+
+
+
+.banner {
+  background-image: url(https://i.imgur.com/adkmzu1.jpg);
+  background-size: cover;
+  background-position: center center;
+  top: 100px;
+  height: 60vh;
+  width: 150vh
+}
+
+
+.img {
+  background-image: url(https://i.imgur.com/Lf4pPwl.jpg);
+  background-position: center;
+  background-size: 30px; }

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<h1 class = "card-content valign center">MY ACCOUNT</h1>
+
+{% for customer in customers %}
+<div class="card">
+  <a href="{% url 'detail' customer.id %}">
+    <div style="color: black;" class="card-content">
+      <span class="card-title">{{ customer.username }}</span>
+      <p>Phone Number: {{ customer.user_Phone }}</p>
+      <p>Email: {{ customer.user_Email }}</p>
+      
+    </div>
+  </a>
+</div>
+{% endfor %} {% endblock %}
