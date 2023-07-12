@@ -27,3 +27,8 @@ background-color: white;
   h1 {
     text-align: center;
   }
+small {
+  text-align: right;
+  float: right;
+  font-size: 50px;
+}

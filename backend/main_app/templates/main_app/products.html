@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% block additional_styles %}
+{% endblock %}
+
+
+</style>
+<div class="header">
+</div>
+  <h1>J&E PRODUCTS</h1>
+  <br>
+  <br>
+        <div class="row">
+          <div class="col s4 section">
+            <img id = "extensions-img" class="square responsive-img" src="https://cdn.shopify.com/s/files/1/0553/4351/3784/products/a8262d2b-497f-4e73-a564-6b44d752f601_grande.jpg?v=1615862744" alt="">
+          </div>
+          <div class="col s4 section">
+            <img id = "extensions-img" class="square responsive-img" src="https://i.etsystatic.com/34811563/r/il/857a8e/3823114179/il_1588xN.3823114179_dovg.jpg" alt="">
+          </div>
+          <div class="col s4 section">
+            <img id = "extensions-img" class="square responsive-img" src="https://m.media-amazon.com/images/I/51nB8bIiXnL.jpg" alt="">
+          </div>
+     
+          <div class="row">
+            <div class="col s4 section">
+              <h5 style="text-align: center;">
+                  <button type="button">
+                  <a class = "black-text" href="{% url 'mink_detail' %}">Mink Bundles</a></h5>
+              </button>
+            </div>
+            <h5 style="text-align: center;">
+            <div class="col s4 section">
+              <button type="button">
+              <a class = "black-text" href="{% url 'closure_detail' %}">Mink Closures</a></h5>
+            </button>
+            </div>
+            <!-- <h5 style="text-align: center;">
+              <div class="col s4 section">
+                <button type="button">
+                  <li><a class = "black-text" href="{% url 'blonde_detail' %}">Russian Blonde</a></li></h5>
+              </button> -->
+        </div>
+      </div>
+     <br>
+     <br>
+ 
+</body>
+</html>
+
+{% endblock %}
