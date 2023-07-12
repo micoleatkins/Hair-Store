@@ -1,16 +1,14 @@
 body{
-background-color: white;
+background-color: rgb(255, 255, 255);
 }
 
 
 
 .banner {
   background-image: url(https://i.imgur.com/adkmzu1.jpg);
-  background-size: cover;
-  background-position: center center;
   top: 100px;
   height: 60vh;
-  width: 150vh
+  width: 300vh
 }
 
 
@@ -27,8 +25,11 @@ background-color: white;
   h1 {
     text-align: center;
   }
-small {
+.small {
   text-align: right;
   float: right;
   font-size: 50px;
+}
+.float{
+  text-align: right;
 }

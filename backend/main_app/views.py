@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
+from .models import Extension
 
 
 def home(request):
@@ -12,6 +13,14 @@ def about(request):
 
 def extensions(request):
     return render(request, 'main_app/extensions.html')
+
+
+def extensions_index(request):
+    extensions = Extension.objects.all()
+    return render(request, 'main_app/extensions.html',
+                  {
+                      'extensions': extensions
+                  })
 
 
 def products(request):
