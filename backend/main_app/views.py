@@ -15,6 +15,10 @@ def extensions(request):
     return render(request, 'main_app/extensions.html')
 
 
+def blonde(request):
+    return render(request, 'main_app/blonde.html')
+
+
 def extensions_index(request):
     extensions = Extension.objects.all()
     return render(request, 'main_app/extensions.html',
@@ -43,8 +47,8 @@ def oil_detail(request):
     return render(request, 'main_app/oil_detail.html')
 
 
-def blonde(request):
-    return render(request, 'main_app/blonde.html')
+def mask_detail(request):
+    return render(request, 'main_app/mask_detail.html')
 
 
 def checkout(request):
