@@ -6,7 +6,26 @@
 
 <h1>Russian Blonde</h1>
 
+<body>
+  <div class="col s4 section" >
+    <img class= "responsive-img" style="width: 350px; border-radius: 10px;" src="https://m.media-amazon.com/images/I/51nB8bIiXnL.jpg" alt="Mink">
+  </div>
 
+  <div class="column">
+    <div class="col s6">
+    <form action="/mink_detail/" method="post">
+      {% csrf_token %}
+      <input type="length">Length: </input>
+      <input type="Quantity">Quantity: </input>
+      <input type="Price">Price: </input>
+      <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+    </form>
+    </div>
+    <div class="flex">
+      <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+      </div>
+      </div>
+      </div>
       
 
 
