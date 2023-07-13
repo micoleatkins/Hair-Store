@@ -35,6 +35,10 @@ def closure_detail(request):
     return render(request, 'main_app/closure_detail.html')
 
 
+def edge_detail(request):
+    return render(request, 'main_app/edge_detail.html')
+
+
 def blonde(request):
     return render(request, 'main_app/blonde.html')
 

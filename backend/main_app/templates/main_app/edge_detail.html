@@ -1,0 +1,48 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% block additional_styles %}
+{% endblock %}
+
+
+<h1>Edge Control</h1>
+
+<body>
+    <img class= "responsive-img" style=" width:450px;border-radius: 10px;" src="https://s.alicdn.com/@sc04/kf/H84df1937dc824fb998ebc5de8489e9046.jpg_960x960.jpg" alt="Mink">
+</div>
+</div>
+</div>
+<table>
+
+<div class="column">
+<div class="col s6">
+<form action="/edge_detail/" method="post">
+  {% csrf_token %}
+  <input type="Quantity">Quantity: </input>
+  <input type="Price">Price: $12</input>
+  <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+</form>
+</div>
+<div class="flex">
+  <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+  </div>
+  </div>
+  </div>
+  
+
+  <p>Our edge control has a great consistency with a super hold on hair for up to 12hrs. Get your edges laid today!</p>
+  <h5></h5>
+
+</div>
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+
+
+
+
