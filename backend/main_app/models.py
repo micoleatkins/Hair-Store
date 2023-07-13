@@ -27,7 +27,7 @@ class Extension(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('mink_detail', kwargs={'pk': self.id})
+        return reverse('extensions', kwargs={'pk': self.id})
 
 
 class Product(models.Model):
