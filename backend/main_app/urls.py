@@ -14,5 +14,6 @@ urlpatterns = [
     path('edge_detail/', views.edge_detail, name='edge_detail'),
     path('oil_detail/', views.oil_detail, name='oil_detail'),
     path('mask_detail/', views.mask_detail, name='mask_detail'),
+    path('cart/', views.cart, name='cart'),
 
 ]

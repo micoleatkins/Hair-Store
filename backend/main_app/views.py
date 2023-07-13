@@ -55,6 +55,10 @@ def checkout(request):
     return render(request, 'main_app/checkout.html')
 
 
+def cart(request):
+    return render(request, 'main_app/cart.html')
+
+
 def customers_index(request):
     customers = Customer.objects.all()
     return render(request, 'customers/index.html', {
