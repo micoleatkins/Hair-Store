@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block additional_styles %}
+{% endblock %}
+
+
+<h1>Hair Mask</h1>
+
+<body>
+    <img class= "responsive-img" style=" width:450px;border-radius: 10px;" src="https://img.freepik.com/premium-photo/small-plastic-jar-mockup-cosmetic-cream-package-3d-rendering_613230-316.jpg?w=1380" alt="Mask">
+</div>
+</div>
+</div>
+<table>
+
+<div class="column">
+<div class="col s6">
+<form action="/oil_detail/" method="post">
+  {% csrf_token %}
+  <input type="Quantity">Quantity: </input>
+  <input type="Price">Price: $20</input>
+  <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+</form>
+</div>
+<div class="flex">
+  <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+  </div>
+  </div>
+  </div>
+  
+
+  <p>We take pride in providing our customers with not only the best hair but organic products as weLL. Our hair growth oil is made of organic essential oils blended together to create the perfect masterpiece. </p>
+  <h5>Apply daily for max benefits</h5>
+
+</div>
+</body>
+</html>
+
+{% endblock %}
