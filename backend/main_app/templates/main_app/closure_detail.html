@@ -11,6 +11,24 @@
     <img class= "responsive-img" style="width: 350px; border-radius: 10px;" src="https://i.etsystatic.com/34811563/r/il/857a8e/3823114179/il_1588xN.3823114179_dovg.jpg" alt="Closure">
   </div>
 
+  <div class="column">
+    <div class="col s6">
+    <form action="/mink_detail/" method="post">
+      {% csrf_token %}
+      <input type="length">Length: </input>
+      <input type="Quantity">Quantity: </input>
+      <input type="Price">Price: </input>
+      <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+    </form>
+    </div>
+    <div class="flex">
+      <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+      </div>
+      </div>
+      </div>
+      
+
+
   <p>Our Mink Lace Closures are 100% human hair, pre-plucked, and ready for installation. J&E Mink Closures are hand made and tied at least 2.5 times to ensure no shedding or balding. Custom made lace closures with high quality HD lace. Luxe Lace Closures are 4×4 unless customization is requested.</p>
   <h5>All hair is measured when pulled straight.</h5>
 

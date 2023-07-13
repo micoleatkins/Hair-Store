@@ -8,8 +8,26 @@
 
 <body>
   <div class="col s4 section" >
-    <img class= "responsive-img" style="width: 350px; border-radius: 10px;" src="https://cdn.shopify.com/s/files/1/0553/4351/3784/products/a8262d2b-497f-4e73-a564-6b44d752f601_grande.jpg?v=1615862744" alt="Mink">
+    <img class= "responsive-img" style="width: 350px; border-radius: 10px;" src="https://m.media-amazon.com/images/I/51nB8bIiXnL.jpg" alt="Mink">
   </div>
+
+  <div class="column">
+    <div class="col s6">
+    <form action="/mink_detail/" method="post">
+      {% csrf_token %}
+      <input type="length">Length: </input>
+      <input type="Quantity">Quantity: </input>
+      <input type="Price">Price: </input>
+      <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+    </form>
+    </div>
+    <div class="flex">
+      <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+      </div>
+      </div>
+      </div>
+      
+
 
   <p>Our Mink Body Wave Bundles are 100% human hair, providing a soft and natural look. Each bundle is full-bodied and of premium quality, ensuring each strand is healthy and tangle-free. Our bundles will give you a luxurious experience that lasts.</p>
   <h5>We recommend a minimum of 2-3 bundles for an install on most women.</h5>

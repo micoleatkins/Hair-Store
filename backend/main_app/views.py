@@ -35,8 +35,8 @@ def closure_detail(request):
     return render(request, 'main_app/closure_detail.html')
 
 
-def blonde_detail(request):
-    return render(request, 'main_app/blonde_detail.html')
+def blonde(request):
+    return render(request, 'main_app/blonde.html')
 
 
 def checkout(request):
