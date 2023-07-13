@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView
-from .models import Extension
+from .models import Extension, Product
 
 
 # Create your views here.
