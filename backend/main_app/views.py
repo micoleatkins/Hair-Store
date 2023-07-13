@@ -21,14 +21,6 @@ def blonde(request):
     return render(request, 'main_app/blonde.html')
 
 
-def extensions_index(request):
-    extensions = Extension.objects.all()
-    return render(request, 'main_app/extensions.html',
-                  {
-                      'extensions': extensions
-                  })
-
-
 def products(request):
     return render(request, 'main_app/products.html')
 
