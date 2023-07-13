@@ -39,6 +39,10 @@ def blonde_detail(request):
     return render(request, 'main_app/blonde_detail.html')
 
 
+def checkout(request):
+    return render(request, 'main_app/checkout.html')
+
+
 def customers_index(request):
     customers = Customer.objects.all()
     return render(request, 'customers/index.html', {

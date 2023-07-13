@@ -12,21 +12,20 @@
 </div>
 </div>
 </div>
-<table class="table">
-  <div class="row">
-    <div class="col s6">
-      <div class="form">
-        <div class="form-action">
+<table>
 
-        <div style="flex:2; text-align:right;margin-top: 20px"><strong>Length</strong></div>
-          <div style="flex:2; text-align: right;margin-top: 20px "><strong>Quantity</strong></div>
-          <div style="flex:1; display: grid; text-align: right; margin-top: 20px;"><strong>Price</strong></div>
-        </div>
-        </div>
-
+<div class="column">
+<div class="col s6">
+<form action="/mink_detail/" method="post">
+  {% csrf_token %}
+  <input type="length">Length: </input>
+  <input type="Quantity">Quantity: </input>
+  <input type="Price">Price: </input>
+  <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+</form>
+</div>
 <div class="flex">
-  <a class="btn" href="{% url 'home' %}">Add To Cart</a>
-  <a class="btn" href="{% url 'home' %}">Checkout</a>
+  <a class="btn" href="{% url 'checkout' %}">Checkout</a>
   </div>
   </div>
   </div>

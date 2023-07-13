@@ -7,6 +7,12 @@ from django.contrib.auth.models import User
 class Extension(models.Model):
     length = models.IntegerField(default=0)
     quantity = models.IntegerField(default=0)
+    price = models.IntegerField(default=0)
+
+
+class Product(models.Model):
+    quantity = models.IntegerField(default=0)
+    price = models.IntegerField(default=0)
 
 
 class Customer(models.Model):
