@@ -10,8 +10,6 @@
   <br>
 
 <div class="row">
-
-
   {% for product in products %}
 
   <div class="products">
@@ -25,6 +23,10 @@
 
       <button>Add to Cart</button>
       <button>Details</button>
+
+
+      </div>
+      </div>
 </div>
 </div>
 
@@ -35,6 +37,19 @@
 
 <br>
 <br>
+<script>
+  let buttons = document.querySelectorAll(".products button")
+  buttons.forEach((button) => {
+    button.addEventListener("click", addToOrder)
+  })
+
+  function addToOrder(e){
+    let button = e.target
+    console.log(button)
+  }
+
+  
+  </script>
 </body>
 </html>
 {% endfor %}
