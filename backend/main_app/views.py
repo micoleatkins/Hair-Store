@@ -52,6 +52,12 @@ def checkout(request):
     return render(request, 'main_app/checkout.html')
 
 
+def add_to_order(request, product_id, order_id):
+    Product.objects.get(id=product_id).order.add(order_id)
+
+    return redirect('cart', order_id=order_id)
+
+
 def cart(request):
     return render(request, 'main_app/cart.html')
 

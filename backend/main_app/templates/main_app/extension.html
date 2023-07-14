@@ -12,13 +12,17 @@
     <div class="col s4 section">
   {% for product in products %}
 
-  <div class="products">
+  <div class="products content">
     <div class="square responsive-img">
-    <img src="{{product.picture.url}}" alt="mink">
-    <div class="action">
+    <img src="{{product.picture}}" alt="mink">
       <p>{{product.name}}</p>
       <p>${{product.price}}</p>
-      <button value="{{product.id}}">Add to Cart</button>
+      <div class="card-action">
+        <form action="{% url 'add_to_order' product.id%}" method="POST">
+          {% csrf_token %}
+      <button type="submit" value="{{product.id}}">Add to Cart</button>
+      </form>
+  
 </div>
 </div>
 </div>
@@ -27,19 +31,14 @@
 <br>
 <br>
 
-<script>
+<!-- <script>
   let buttons = document.querySelectorAll(".products button")
 
   buttons.forEach(button=>{
-    button.addEventListener("click", addToOrder)
+    button.addEventListener("click", add_To_Order)
+    console.log(button)
   })
+</script> -->
 
-  function addToOrder(e){
-    let product_id = e.target.value
-    console.log(product_id)
-  }
-  </script>
-</body>
-</html>
 {% endfor %}
 {% endblock %}
