@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import CreateView
-from .models import Product, Order, OrderItem, Customer
+from .models import Product
 
 
 # Create your views here.
@@ -14,9 +14,10 @@ def about(request):
 
 
 def extension(request):
-    products.objects.all()
-    context = {"products": products}
-    return render(request, 'main_app/extension.html')
+    products = Product.objects.all()
+    return render(request, 'main_app/extension.html', {
+        'products': products
+    })
 
 
 def blonde(request):

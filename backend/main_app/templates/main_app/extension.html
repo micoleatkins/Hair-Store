@@ -9,16 +9,19 @@
   <br>
   <br>
 
-
-
 <div class="row">
-<div class="container">
+
+
+  {% for product in products %}
+
   <div class="products">
-    <div class="square responsive-img"></div>
+    <div class="square responsive-img">
+      <img src="{{product.picture.url}}" alt="mink">
+    </div>
     <div class="action">
       <div class="col s4 section">
-      <p>Mink</p>
-      <p>$65</p>
+      <p>{{product.name}}</p>
+      <p>${{product.price}}</p>
 
       <button>Add to Cart</button>
       <button>Details</button>
@@ -27,95 +30,12 @@
 
 </div>
 </div>
-
-<div class="row">
-  <div class="container">
-    <div class="products">
-      <div class="square responsive-img"></div>
-      <div class="action">
-        <div class="col s4 section">
-        <p>Mink</p>
-        <p>$65</p>
-  
-        <button>Add to Cart</button>
-        <button>Details</button>
-  </div>
-  </div>
-  
   </div>
   </div>
 
-<div class="row">
-  <div class="container">
-    <div class="products">
-      <div class="square responsive-img"></div>
-      <div class="action">
-        <div class="col s4 section">
-        <p>Mink</p>
-        <p>$65</p>
-  
-        <button>Add to Cart</button>
-        <button>Details</button>
-  </div>
-  </div>
-  
-  </div>
-  </div>
-
-<div class="row">
-  <div class="container">
-    <div class="products">
-      <div class="square responsive-img"></div>
-      <div class="action">
-        <div class="col s4 section">
-        <p>Mink</p>
-        <p>$65</p>
-  
-        <button>Add to Cart</button>
-        <button>Details</button>
-  </div>
-  </div>
-  
-  </div>
-  </div>
-
-<div class="row">
-  <div class="container">
-    <div class="products">
-      <div class="square responsive-img"></div>
-      <div class="action">
-        <div class="col s4 section">
-        <p>Mink</p>
-        <p>$65</p>
-  
-        <button>Add to Cart</button>
-        <button>Details</button>
-  </div>
-  </div>
-  
-  </div>
-  </div>
-
-<div class="row">
-  <div class="container">
-    <div class="products">
-      <div class="square responsive-img"></div>
-      <div class="action">
-        <div class="col s4 section">
-        <p>Mink</p>
-        <p>$65</p>
-  
-        <button>Add to Cart</button>
-        <button>Details</button>
-  </div>
-  </div>
-  
-  </div>
-  </div>
-
- <br>
- <br>
+<br>
+<br>
 </body>
 </html>
-
+{% endfor %}
 {% endblock %}
