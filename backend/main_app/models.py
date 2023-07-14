@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from delocate.fuse import fuse_wheels
 import uuid
 
 # Create your models here.
@@ -9,7 +10,7 @@ import uuid
 class Product(models.Model):
     name = models.CharField(max_length=150)
     price = models.IntegerField(null=False, blank=False)
-    picture = models.ImageField(upload_to="images", default="")
+    picture = models.ImageField(upload_to="images/", default="")
 
     def __str__(self):
         return self.name

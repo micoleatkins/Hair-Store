@@ -15,6 +15,7 @@ def about(request):
 
 def extension(request):
     products = Product.objects.all()
+    print(products)
     return render(request, 'main_app/extension.html', {
         'products': products
     })
@@ -52,13 +53,9 @@ def checkout(request):
     return render(request, 'main_app/checkout.html')
 
 
-def add_to_order(request, product_id, order_id):
-    Product.objects.get(id=product_id).order.add(order_id)
-
-    return redirect('cart', order_id=order_id)
-
-
-def cart(request):
+def cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    print(product)
     return render(request, 'main_app/cart.html')
 
 
