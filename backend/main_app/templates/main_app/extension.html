@@ -9,46 +9,35 @@
   <br>
   <br>
 
-<div class="row">
+    <div class="col s4 section">
   {% for product in products %}
 
   <div class="products">
     <div class="square responsive-img">
-      <img src="{{product.picture.url}}" alt="mink">
-    </div>
+    <img src="{{product.picture.url}}" alt="mink">
     <div class="action">
-      <div class="col s4 section">
       <p>{{product.name}}</p>
       <p>${{product.price}}</p>
-
-      <button>Add to Cart</button>
-      <button>Details</button>
-
-
-      </div>
-      </div>
+      <button value="{{product.id}}">Add to Cart</button>
+</div>
 </div>
 </div>
 
-</div>
-</div>
-  </div>
-  </div>
 
 <br>
 <br>
+
 <script>
   let buttons = document.querySelectorAll(".products button")
-  buttons.forEach((button) => {
+
+  buttons.forEach(button=>{
     button.addEventListener("click", addToOrder)
   })
 
   function addToOrder(e){
-    let button = e.target
-    console.log(button)
+    let product_id = e.target.value
+    console.log(product_id)
   }
-
-  
   </script>
 </body>
 </html>
