@@ -13,8 +13,8 @@ def about(request):
     return render(request, 'about.html')
 
 
-def extensions(request):
-    return render(request, 'main_app/extensions.html')
+def extension(request):
+    return render(request, 'main_app/extension.html')
 
 
 def blonde(request):

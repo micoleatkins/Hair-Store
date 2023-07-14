@@ -27,7 +27,7 @@ class Extension(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('extensions', kwargs={'pk': self.id})
+        return reverse('extension_detail', kwargs={'pk': self.id})
 
 
 class Product(models.Model):

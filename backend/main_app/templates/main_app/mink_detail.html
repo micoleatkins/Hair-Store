@@ -16,16 +16,10 @@
 
 <div class="column">
 <div class="col s6">
-<form action="/mink_detail/" method="post">
-  {% csrf_token %}
-  <input type="length">Length: </input>
-  <input type="Quantity">Quantity: </input>
-  <input type="Price">Price: $65 </input>
-  <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
-</form>
-</div>
+<form action="/mink_detail/" method="submit">
 <div class="flex">
-  <a class="btn" href="{% url 'checkout' %}">Checkout</a>
+  <a class="btn" href="{% url 'extension' %}">Back</a>
+</form>
   </div>
   </div>
   </div>
