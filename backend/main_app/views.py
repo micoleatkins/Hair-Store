@@ -14,6 +14,8 @@ def about(request):
 
 
 def extension(request):
+    products.objects.all()
+    context = {"products": products}
     return render(request, 'main_app/extension.html')
 
 
