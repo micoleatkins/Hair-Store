@@ -25,29 +25,21 @@
           <li><a href="/about">About</a></li>
       
           <li><a href="/extension">View All</a></li>
-          <li><a href="/products">Products</a></li>
+          <li><a href="/products">Details</a></li>
           <li><a href="/cart">Cart</a></li>
           
         
       </ul>
-    
-          
-          {% block additional_styles %}
-          <style>
-            body {
-              background-image: url(https://i.imgur.com/Z9R1j4W.jpg);
-            }
-            </style>
-                {% endblock %}
+     
         </ul>
       </div>
     </nav>
   </header>
   <main class="container">
-    {% block content %}
-    {% endblock %}
-  </main>
-  <footer class="page-footer black">
+
+  {% block content %}
+  {% endblock %}
+  <footer class="page-footer black" padding-top="0"; text-align="right">
     <div class="right">All Rights Reserved, &copy; J&E Hair Extensions &nbsp;</div>
   </footer>
 </body>

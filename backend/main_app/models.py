@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-from delocate.fuse import fuse_wheels
+
 import uuid
 
 # Create your models here.
@@ -10,7 +10,8 @@ import uuid
 class Product(models.Model):
     name = models.CharField(max_length=150)
     price = models.IntegerField(null=False, blank=False)
-    picture = models.ImageField(upload_to="images/", default="")
+    picture = models.ImageField(null=True, blank=True,
+                                upload_to="images/")
 
     def __str__(self):
         return self.name
@@ -24,6 +25,10 @@ class Order(models.Model):
     def __str__(self):
         return str(self.id)
 
+    def get_total_price(self):
+        total = sum(item.get_cost() for item in self.items.all())
+        return total
+
 
 class OrderItem(models.Model):
     product = models.ForeignKey(
@@ -34,6 +39,12 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return self.product.name
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'order_id': self.id})
+
+    def get_cost(self):
+        return self.price * self.quantity
 
 
 class Customer(models.Model):

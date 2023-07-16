@@ -15,15 +15,10 @@
 
 <div class="column">
 <div class="col s6">
-<form action="/oil_detail/" method="post">
-  {% csrf_token %}
-  <input type="Quantity">Quantity: </input>
-  <input type="Price">Price: $15</input>
-  <input type="submit" value="Add To Cart" class="btn" href="{% url 'checkout' %}"></a>
+<form action="/oil_detail/" method="submit">
+  <a class="btn" href="{% url 'extension' %}">Back</a>
 </form>
 </div>
-<div class="flex">
-  <a class="btn" href="{% url 'checkout' %}">Checkout</a>
   </div>
   </div>
   </div>

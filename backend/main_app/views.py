@@ -22,7 +22,7 @@ def extension(request):
 
 
 def blonde(request):
-    return render(request, 'main_app/blonde.html')
+    return render(request, 'main_app/products/blonde.html')
 
 
 def products(request):
@@ -30,27 +30,32 @@ def products(request):
 
 
 def mink_detail(request):
-    return render(request, 'main_app/mink_detail.html')
+    return render(request, 'main_app/products/mink_detail.html')
 
 
 def closure_detail(request):
-    return render(request, 'main_app/closure_detail.html')
+    return render(request, 'main_app/products/closure_detail.html')
 
 
 def edge_detail(request):
-    return render(request, 'main_app/edge_detail.html')
+    return render(request, 'main_app/products/edge_detail.html')
 
 
 def oil_detail(request):
-    return render(request, 'main_app/oil_detail.html')
+    return render(request, 'main_app/products/oil_detail.html')
 
 
 def mask_detail(request):
-    return render(request, 'main_app/mask_detail.html')
+    return render(request, 'main_app/products/mask_detail.html')
 
 
 def checkout(request):
     return render(request, 'main_app/checkout.html')
+
+
+def getCart(request):
+    product = Product.objects.get(id=product_id)
+    return render(request, 'main_app/cart.html')
 
 
 def cart(request, product_id):
