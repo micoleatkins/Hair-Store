@@ -46,6 +46,7 @@ class OrderItem(models.Model):
 
 
 class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     username = models.CharField(max_length=250)
     user_Address = models.CharField(max_length=250)
     user_Email = models.EmailField(max_length=70, blank=True, unique=True)
