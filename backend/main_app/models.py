@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-import uuid
+
 
 # Create your models here.
 
@@ -16,7 +16,6 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    id = models.UUIDField(default=uuid.uuid4, primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
 
@@ -32,7 +31,7 @@ class OrderItem(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name='items')
     order = models.ForeignKey(Order, on_delete=models.CASCADE,
-                              related_name="orderitems")
+                              related_name="items")
     quantity = models.IntegerField(default=0)
 
     def __str__(self):
@@ -42,7 +41,7 @@ class OrderItem(models.Model):
         return reverse('detail', kwargs={'order_id': self.id})
 
     def get_cost(self):
-        return self.price * self.quantity
+        return self.product.price * self.quantity
 
 
 class Customer(models.Model):

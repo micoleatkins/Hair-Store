@@ -18,8 +18,7 @@ def about(request):
 
 
 def extension(request):
-    products = Product.objects.all()(user=request.user)
-    print(products)
+    products = Product.objects.all()
     return render(request, 'main_app/extension.html', {
         'products': products
     })
@@ -31,7 +30,8 @@ def blonde(request):
 
 
 def products(request):
-    return render(request, 'main_app/products.html')
+    products = Product.objects.filter(user=request.user)
+    return render(request, 'main_app/products.html', {'products': product})
 
 
 @login_required
