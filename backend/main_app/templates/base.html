@@ -17,20 +17,22 @@
     <nav>
       <div class="nav-wrapper black">
         <ul>
-          <li><a href="/extension" class="brand-logo center">&nbsp;&nbsp;J&E HAIR CO.</a></li>
+          <li><a href="{% url 'home' %}" class="brand-logo center">&nbsp;&nbsp;J&E HAIR CO.</a></li>
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;logo</a></li>
         </ul>
         <ul class="right">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
-      
+          {% if user.is_authenticated %}
           <li><a href="/extension">View All</a></li>
           <li><a href="/products">Details</a></li>
           <li><a href="/cart">Cart</a></li>
-          
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
         
       </ul>
-     
         </ul>
       </div>
     </nav>
@@ -39,8 +41,11 @@
 
   {% block content %}
   {% endblock %}
-  <footer class="page-footer black" padding-top="0"; text-align="right">
-    <div class="right">All Rights Reserved, &copy; J&E Hair Extensions &nbsp;</div>
+
+  <footer>
+    <div class="container">
+    <div class="center">All Rights Reserved, &copy; J&E Hair Extensions &nbsp;</div>
+    </div>
   </footer>
 </body>
 </html>

@@ -58,10 +58,13 @@ def getCart(request):
     return render(request, 'main_app/cart.html')
 
 
-def cart(request, product_id):
-    product = Product.objects.get(id=product_id)
+def cart(request, orderitems_id):
+    orderitems = Orderitems.objects.get(id=orderitems_id)
     print(product)
-    return render(request, 'main_app/cart.html')
+    return render(request, 'main_app/cart.html', {
+        'orderitems': orderitems,
+
+    })
 
 
 def customers_index(request):
