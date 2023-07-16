@@ -30,8 +30,7 @@ def blonde(request):
 
 
 def products(request):
-    products = Product.objects.filter(user=request.user)
-    return render(request, 'main_app/products.html', {'products': product})
+    return render(request, 'main_app/products.html')
 
 
 @login_required
