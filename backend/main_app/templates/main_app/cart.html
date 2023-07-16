@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
+
 {% block content %}
-
-
-
 {% for product in products %}
-<div class="card">
-<a href="{% url 'items' order.id %}"></a>
-  {% endfor %}
-  <div style="color: black;" class="card-content">
-    <span class="card-title">My Cart</span>
-  <p>Product: {{ product.name }}</p>
-      <p>Price: {{ product.price }}</p>
-              <h2>Total: $ {{ item.get_total_price }}</h2>
-                  </div>
-                </div>
-{% endblock %} 
+<div>
+{{ product.name }}
+${{ product.price }}
+<form method="POST" action="{% url 'cart' product.id %}">
+{% csrf_token %}
+<input type="hidden" name="product_id" value="{{ product.id }}">
+<button type="submit">Add to Cart</button>
+</form>
+</div>
+{% endfor %}
+{% endblock %}
