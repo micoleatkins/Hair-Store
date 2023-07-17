@@ -9,7 +9,6 @@ from django.contrib.auth.models import User
 class Product(models.Model):
     name = models.CharField(max_length=150)
     price = models.IntegerField(default=0, blank=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -18,29 +17,15 @@ class Product(models.Model):
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
+    products = models.ManyToManyField(Product)
 
     def __str__(self):
-        return str(self.id)
+        return f'{self.user.username} - {self.products.name}'
 
     def get_total_price(self):
-        orderitems = self.orderitems.all()
-        total = sum([item.price for item in orderitems])
+        items = self.items.all()
+        total = sum([item.price for item in items])
         return total
-
-
-class OrderItem(models.Model):
-    product = models.ForeignKey(
-        'Product', on_delete=models.CASCADE, related_name='items')
-    order = models.ForeignKey(
-        Order, on_delete=models.CASCADE, related_name="orderitems")
-    quantity = models.PositiveIntegerField(default=1)
-
-    def __str__(self):
-        return f'{self.user.username} - {self.product.name}'
-
-    def price(self):
-        new_price = self.product.price * self.quantity
-        return new_price
 
 
 class Customer(models.Model):

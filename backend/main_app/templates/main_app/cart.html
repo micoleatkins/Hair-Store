@@ -5,7 +5,7 @@
 
 
 <h2>My Cart</h2>
-
+<form>
   <div class="Order">
     <h4>{{product.name}}</h4>
     <p>${{product.price}}</p>
@@ -26,7 +26,7 @@
 
     {% endfor %}
   </div>
-
+</form>
   <div class="pay-section">
     <h3>Grand-Total: ${{order.get_total_price}}</h3>
     <button>Pay</button>
