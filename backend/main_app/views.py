@@ -63,10 +63,10 @@ def checkout(request):
     return render(request, 'main_app/checkout.html')
 
 
-@login_required
-def getCart(request):
-    product = Product.objects.get(id=product_id)
-    return render(request, 'main_app/cart.html')
+# @login_required
+# def getCart(request):
+#     product = Product.objects.get(id=product_id)
+#     return render(request, 'main_app/cart.html')
 
 
 @login_required
@@ -77,6 +77,12 @@ def cart(request, orderitems_id):
         'orderitems': orderitems,
 
     })
+
+
+class ExtensionsCreate(CreateView):
+    model = Product
+    fields = '__all__'
+    success_url = '/cart/{product.id}'
 
 
 @login_required
