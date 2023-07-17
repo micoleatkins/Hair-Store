@@ -70,19 +70,23 @@ def checkout(request):
 
 
 @login_required
-def cart(request, orderitems_id):
-    orderitems = Orderitems.objects.get(id=orderitems_id)
-    print(product)
-    return render(request, 'main_app/cart.html', {
-        'orderitems': orderitems,
-
+def cart(request):
+    cart = None
+    orderitems = []
+    if request.user.is_authenticated:
+        order, created = Order.objects.get_or_create(
+            user=request.user, completed=False)
+        orderitems = order.orderitems.all()
+    return render(request, "main_app/cart.html", {
+        'items': orderitems,
+        'order': order
     })
 
 
-class ExtensionsCreate(CreateView):
-    model = Product
-    fields = '__all__'
-    success_url = '/cart/{product.id}'
+# class ExtensionsCreate(CreateView):
+#     model = Product
+#     fields = '__all__'
+#     success_url = '/cart/{product.id}'
 
 
 @login_required

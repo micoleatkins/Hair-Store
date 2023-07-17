@@ -3,15 +3,39 @@
 {% block content %}
 
 
-{% for product in products %}
-<div>
-{{ product.name }}
-${{ product.price }}
-<form method="POST" action="{% url 'cart' product.id %}">
-{% csrf_token %}
-<input type="hidden" name="product_id" value="{{ product.id }}">
-<button type="submit">Add to Cart</button>
-</form>
+
+<h2>My Cart</h2>
+
+  <div class="Order">
+    <h4>{{product.name}}</h4>
+    <p>${{product.price}}</p>
+  </div>
+
+  <div class="itemContainer">
+
+    {% for item in items %}
+    <div class="item">
+      <div class="iteminfo">
+        <p>{{item.product.name}}</p>
+      </div>
+
+      <div class="name"><p>{{item.quantity}}</p></div>
+      <div class="name"><p>${{item.product.price}}</p></div>
+      <div class="name"><p>${{item.price}}</p></div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+  <div class="pay-section">
+    <h3>Grand-Total: ${{order.get_total_price}}</h3>
+    <button>Pay</button>
+  </div>
 </div>
+
+
+
+
+
 {% endfor %}
 {% endblock %}

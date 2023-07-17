@@ -13,8 +13,9 @@ urlpatterns = [
     path('products/edge_detail/', views.edge_detail, name='edge_detail'),
     path('products/oil_detail/', views.oil_detail, name='oil_detail'),
     path('products/mask_detail/', views.mask_detail, name='mask_detail'),
+    path("cart", views.cart, name="cart"),
     # path('cart/<int:product_id>/', views.cart, name='cart'),
-    path('extensions/create/', views.ExtensionsCreate.as_view(),
-         name='extensions_create'),
+    # path('extensions/create/', views.ExtensionsCreate.as_view(),
+    #      name='extensions_create'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

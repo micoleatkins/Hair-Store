@@ -12,7 +12,7 @@ class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} ({self.id})'
+        return self.name
 
 
 class Order(models.Model):
@@ -23,18 +23,24 @@ class Order(models.Model):
         return str(self.id)
 
     def get_total_price(self):
-        total = sum(item.get_cost() for item in self.items.all())
+        orderitems = self.orderitems.all()
+        total = sum([item.price for item in orderitems])
         return total
 
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey('main_app.Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        'Product', on_delete=models.CASCADE, related_name='items')
+    order = models.ForeignKey(
+        Order, on_delete=models.CASCADE, related_name="orderitems")
     quantity = models.PositiveIntegerField(default=1)
-    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.user.username} - {self.product.name}'
+
+    def price(self):
+        new_price = self.product.price * self.quantity
+        return new_price
 
 
 class Customer(models.Model):
