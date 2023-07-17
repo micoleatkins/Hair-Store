@@ -3,30 +3,29 @@
 {% block content %}
 
 
+{% for order in orders %}
+<h1>{{ order.user }}'s Cart</h1>
+{% for product in order.products.all %}
+<h4>{{ product.name }}</h4>
+<p>${{ product.price }}</p>
+  {% endfor %}
 
-<h2>My Cart</h2>
-<form>
   <div class="Order">
     <h4>{{product.name}}</h4>
     <p>${{product.price}}</p>
-  </div>
-
-  <div class="itemContainer">
-
-    {% for item in items %}
-    <div class="item">
-      <div class="iteminfo">
-        <p>{{item.product.name}}</p>
-      </div>
-
-      <div class="name"><p>{{item.quantity}}</p></div>
-      <div class="name"><p>${{item.product.price}}</p></div>
-      <div class="name"><p>${{item.price}}</p></div>
-    </div>
 
     {% endfor %}
   </div>
-</form>
+  <div class="itemContainer">
+    
+    <div class="item">
+      <div class="iteminfo">
+        <p>{{order.product.name}}</p>
+      </div>
+      <div class="name"><p>${{order.product.price}}</p></div>
+    </div>
+
+  </div>
   <div class="pay-section">
     <h3>Grand-Total: ${{order.get_total_price}}</h3>
     <button>Pay</button>

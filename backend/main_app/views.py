@@ -69,10 +69,10 @@ def add_to_cart(requst, order_id, product_id):
 
 
 @login_required
-def cart(request, order_id):
-    order = Order.objects.all()
+def cart(request):
+    orders = Order.objects.all()
     return render(request, "main_app/cart.html", {
-        'order': order
+        'orders': orders
     })
 
 
