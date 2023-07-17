@@ -33,3 +33,12 @@ background-color: rgb(255, 255, 255);
 .btn {
   background-color: black;
 }
+
+.banner {
+  background-image:url(https://i.imgur.com/og0hDte.jpg) ;
+  background-position: center center;
+}
+
+.left brand-logo{
+  background-image: url(https://i.imgur.com/KRdPmOt.png);
+}
