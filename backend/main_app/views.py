@@ -19,8 +19,10 @@ def about(request):
 
 def extension(request):
     products = Product.objects.all()
+    orders = Order.objects.all()
     return render(request, 'main_app/extension.html', {
-        'products': products
+        'products': products,
+        'orders': orders
     })
 
 
@@ -65,7 +67,7 @@ def checkout(request):
 
 def add_to_cart(requst, order_id, product_id):
     Order.objects.get(id=order_id).product.add(product_id)
-    return redirect('cart', order_id=order_id)
+    return redirect('add_to_cart', order_id=order_id)
 
 
 @login_required
@@ -91,7 +93,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')
+            return redirect('home')
         else:
             error_message = 'Invalid sign up - try again'
     form = UserCreationForm()

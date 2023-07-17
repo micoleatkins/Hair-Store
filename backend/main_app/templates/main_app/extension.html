@@ -22,6 +22,7 @@
   <div class="col s4 section">
       <h4>{{product.name}}</h4>
       <p>${{product.price}}</p>
+  
         <form action="{% url 'cart' %}" method="POST">
           {% csrf_token %}
       <button type="submit" class="btn black">Add to Cart</button>

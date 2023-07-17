@@ -28,13 +28,8 @@
   </div>
   <div class="pay-section">
     <h3>Grand-Total: ${{order.get_total_price}}</h3>
-    <button>Pay</button>
+    <a class="btn black" href="{% url 'checkout' %}">Pay</a>
   </div>
 </div>
-
-
-
-
-
 
 {% endblock %}
