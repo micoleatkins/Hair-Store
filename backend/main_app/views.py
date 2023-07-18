@@ -81,6 +81,7 @@ def remove_from_cart(request, order_id, product_id):
 @login_required
 def cart(request):
     order = Order.objects.filter(user=request.user).latest('id')
+    print(order)
     return render(request, "main_app/cart.html", {
         'order': order
     })

@@ -17,20 +17,20 @@
     <nav>
       <div class="nav-wrapper black">
         <ul>
-          <li><a href="{% url 'home' %}" class="brand-logo center">&nbsp;&nbsp;J&E HAIR CO.</a></li>
+          <li><a href="{% url 'home' %}" class="brand-logo center" style="font-style: italic;">&nbsp;&nbsp;J&E HAIR CO.</a></li>
           <li><a href="/" class="left brand-logo" ><img class="responsive-img" id="logo" src="logo.png"/></a></li>
         </ul>
         <ul class="right">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/products">Details</a></li>
+          <li><a href="/" style="font-style: italic;">Home</a></li>
+          <li><a href="/about" style="font-style: italic;">About</a></li>
+          <li><a href="/products" style="font-style: italic;">Details</a></li>
           {% if user.is_authenticated %}
-          <li><a href="/extension">View All</a></li>
-          <li><a href="{% url 'cart' %}">Cart</a></li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          <li><a href="/extension"style="font-style: italic;">View All</a></li>
+          <li><a href="{% url 'cart' %}"style="font-style: italic;">Cart</a></li>
+          <li><a href="{% url 'logout' %}"style="font-style: italic;">Log Out</a></li>
           {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          <li><a href="{% url 'signup' %}"style="font-style: italic;">Sign Up</a></li>
+          <li><a href="{% url 'login' %}"style="font-style: italic;">Log In</a></li>
           {% endif %}
         
       </ul>

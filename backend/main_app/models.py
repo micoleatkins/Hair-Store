@@ -24,7 +24,7 @@ class Order(models.Model):
 
     def get_total_price(self):
         products = self.products.all()
-        total = sum([products.price for product in products])
+        total = sum(self.products.price)
         return total
 
 
