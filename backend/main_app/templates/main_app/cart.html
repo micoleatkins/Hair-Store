@@ -23,11 +23,10 @@
       <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
         {% csrf_token %}
             <button type="submit" class="btn black">Remove</button>
-          </form
+      </form>
     {% endfor %}
+    <h3>Order T:</h3> 
+    <h3>{{order.get_total_price}}</h3>
 
-    {% for product in order.products.all %}
-    <h3>{{product.get_total_price}}</h3>
-{% endfor %}
 
 {% endblock %}
