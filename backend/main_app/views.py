@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -72,19 +72,23 @@ def add_to_cart(request, order_id, product_id):
     return redirect('cart')
 
 
-def remove_from_cart(request, order_id, product_id):
-    print('order_id', order_id)
-    Order.objects.filter(user=request.user).products.remove(product_id)
-    return redirect('cart')
+# def remove_from_cart(request, order_id, product_id):
+#     print('order_id', order_id)
+#       order = Order.objects.remove(user=request.user).latest('id')
+#     return redirect('cart')
 
 
 @login_required
 def cart(request):
-    # print('product_id', product_id)
     order = Order.objects.filter(user=request.user).latest('id')
     return render(request, "main_app/cart.html", {
         'order': order
     })
+
+
+class ProductDelete(LoginRequiredMixin, DeleteView):
+    model = Product
+    success_url = '/cart'
 
 
 @login_required

@@ -7,20 +7,21 @@
 <h1 style="font-style: italic; color: wheat;">{{ order.user }}'s Cart</h1>
   <div class="card">
     <div class="card-shadow: 0px 25px 40px #1687d933">
-<h2 style="text-align: left;">Product</h2>
-
-{% for product in order.products.all %}
-<h5>{{ product.name }}</h5>
-<p style="text-align: center;">${{ product.price }}</p>
-  {% endfor %}
+      <h2 style="text-align: left;">Product</h2>
+  {% for product in order.products.all %}
+        <h5>{{ product.name }}</h5>
+          <p style="text-align: center;">${{ product.price }}</p>
+    {% endfor %}
+    </div>
   </div>
-  </div>
-  </div>
-  <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
+</div>
+    <!-- {% if user.is_authenticated %} -->
+      <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
     {% csrf_token %}
-    <button type="submit" class="btn black">Remove</button>
-    </form>
-  <div class="pay-section">
+        <button type="submit" class="btn black">Remove</button>
+      </form>
+      <!-- {% endif %} -->
+    <div class="pay-section">
     <a class="btn black" href="{% url 'checkout' %}">Checkout</a>
   </div>
 </div>
