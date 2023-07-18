@@ -19,10 +19,11 @@ def about(request):
 
 def extension(request):
     products = Product.objects.all()
-    orders = Order.objects.all()
+    order = Order.objects.filter(user=request.user).latest('id')
+    print('order', order)
     return render(request, 'main_app/extension.html', {
         'products': products,
-        'orders': orders
+        'order': order
     })
 
 
@@ -65,16 +66,18 @@ def checkout(request):
     return render(request, 'main_app/checkout.html')
 
 
-def add_to_cart(requst, order_id, product_id):
-    Order.objects.get(id=order_id).product.add(product_id)
-    return redirect('add_to_cart', order_id=order_id)
+def add_to_cart(request, order_id, product_id):
+    print('order_id', order_id)
+    Order.objects.get(id=order_id).products.add(product_id)
+    return redirect('cart')
 
 
 @login_required
 def cart(request):
-    orders = Order.objects.all()
+    # print('product_id', product_id)
+    order = Order.objects.filter(user=request.user).latest('id')
     return render(request, "main_app/cart.html", {
-        'orders': orders
+        'order': order
     })
 
 

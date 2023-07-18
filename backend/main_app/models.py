@@ -23,8 +23,8 @@ class Order(models.Model):
         return f'{self.user.username} - {self.products.name}'
 
     def get_total_price(self):
-        items = self.items.all()
-        total = sum([item.price for item in items])
+        products = self.products.all()
+        total = sum([products.price for product in products])
         return total
 
 

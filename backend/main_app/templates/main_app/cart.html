@@ -3,31 +3,18 @@
 {% block content %}
 
 
-{% for order in orders %}
+
 <h1>{{ order.user }}'s Cart</h1>
+<div class="container">
+  <div class="col s12 m8">
+  <div class="card">
 {% for product in order.products.all %}
 <h4>{{ product.name }}</h4>
 <p>${{ product.price }}</p>
   {% endfor %}
-
-  <div class="Order">
-    <h4>{{product.name}}</h4>
-    <p>${{product.price}}</p>
-
-    {% endfor %}
   </div>
-  <div class="itemContainer">
-    
-    <div class="item">
-      <div class="iteminfo">
-        <p>{{order.product.name}}</p>
-      </div>
-      <div class="name"><p>${{order.product.price}}</p></div>
-    </div>
-
   </div>
   <div class="pay-section">
-    <h3>Grand-Total: ${{order.get_total_price}}</h3>
     <a class="btn black" href="{% url 'checkout' %}">Pay</a>
   </div>
 </div>

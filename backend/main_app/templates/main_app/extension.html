@@ -18,12 +18,13 @@
     <div class="col s4 section">
       <img id = "extensions-img" class="square responsive-img" src="https://img.freepik.com/premium-vector/dark-brown-transparent-glass-medical-dropper-bottle_83194-685.jpg?w=360" alt="">
     </div>
+  
     {% for product in products %}
   <div class="col s4 section">
       <h4>{{product.name}}</h4>
       <p>${{product.price}}</p>
   
-        <form action="{% url 'cart' %}" method="POST">
+        <form action="{% url 'add_to_cart' order.id product.id%}" method="POST">
           {% csrf_token %}
       <button type="submit" class="btn black">Add to Cart</button>
       </form>
