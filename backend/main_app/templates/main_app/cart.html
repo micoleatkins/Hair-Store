@@ -11,16 +11,15 @@
   {% for product in order.products.all %}
         <h5>{{ product.name }}</h5>
           <p style="text-align: center;">${{ product.price }}</p>
+      <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
+        {% csrf_token %}
+            <button type="submit" class="btn black">Remove</button>
+          </form>
     {% endfor %}
     </div>
   </div>
 </div>
-    <!-- {% if user.is_authenticated %} -->
-      <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
-    {% csrf_token %}
-        <button type="submit" class="btn black">Remove</button>
-      </form>
-      <!-- {% endif %} -->
+
     <div class="pay-section">
     <a class="btn black" href="{% url 'checkout' %}">Checkout</a>
   </div>

@@ -19,7 +19,7 @@ urlpatterns = [
          views.ProductDelete.as_view(), name='product_delete'),
     path("cart/<int:order_id>/add_to_cart/<int:product_id>",
          views.add_to_cart, name="add_to_cart"),
-    # path("cart/<int:order_id>/remove_from_cart/<int:product_id>",
-    #      views.remove_from_cart, name="remove_from_cart"),
+    path("cart/<int:order_id>/remove_from_cart/<int:product_id>",
+         views.remove_from_cart, name="remove_from_cart"),
     path('accounts/signup/', views.signup, name='signup'),
 ]

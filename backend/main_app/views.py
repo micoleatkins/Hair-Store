@@ -72,10 +72,10 @@ def add_to_cart(request, order_id, product_id):
     return redirect('cart')
 
 
-# def remove_from_cart(request, order_id, product_id):
-#     print('order_id', order_id)
-#       order = Order.objects.remove(user=request.user).latest('id')
-#     return redirect('cart')
+def remove_from_cart(request, order_id, product_id):
+    print('order_id', order_id)
+    Order.objects.get(id=order_id).products.remove(product_id)
+    return redirect('cart')
 
 
 @login_required
