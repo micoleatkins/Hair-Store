@@ -5,6 +5,9 @@
 
 
 <h1 style="font-style: italic; color: wheat;">{{ order.user }}'s Cart</h1>
+<div class="checkout">
+  <a class="btn green right" href="{% url 'checkout' %}">Checkout</a>
+  </div>
 <table class="w3-table">
   <tr>
       <th>Product</th>
@@ -22,10 +25,8 @@
             <button type="submit" class="btn black">Remove</button>
           </form
     {% endfor %}
-<br>
-    <div class="pay-section">
-  <a class="btn black" href="{% url 'checkout' %}">Checkout</a>
-  </div>
-</div>
+
+
+
 
 {% endblock %}
