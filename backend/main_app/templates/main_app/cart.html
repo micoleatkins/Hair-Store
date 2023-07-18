@@ -4,18 +4,20 @@
 
 
 
-<h1>{{ order.user }}'s Cart</h1>
-<div class="container">
-  <div class="col s12 m8">
+<h1 style="font-style: italic; color: wheat;">{{ order.user }}'s Cart</h1>
   <div class="card">
+    <div class="card shadow">
+<h2>Product:</h2>
 {% for product in order.products.all %}
-<h4>{{ product.name }}</h4>
-<p>${{ product.price }}</p>
+<h5>{{ product.name }}</h5>
+<p style="text-align: center;">${{ product.price }}</p>
   {% endfor %}
   </div>
   </div>
+  </div>
+
   <div class="pay-section">
-    <a class="btn black" href="{% url 'checkout' %}">Pay</a>
+    <a class="btn black" href="{% url 'checkout' %}">Checkout</a>
   </div>
 </div>
 
