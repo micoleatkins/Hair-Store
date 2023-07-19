@@ -22,7 +22,7 @@
   
     {% for product in products %}
   <div class="col s4 section">
-      <h4 style="text-align: center;">{{product.name}}</h4>
+      <h4 style="text-align: center; font-style: italic; font-size: 20px;">{{product.name}}</h4>
       <p style="text-align: center;">${{product.price}}</p>
 
         <form action="{% url 'add_to_cart' order.id product.id%}" method="POST" style="text-align: center;">
