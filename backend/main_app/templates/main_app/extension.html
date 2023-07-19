@@ -7,31 +7,24 @@
 <img class="responsive-img" style="background-size: contain;" src="https://i.imgur.com/byC1Id2.jpg" alt="about">
   <br>
   <br>
-
-  <div class="row">
-    <div class="col s4 section">
-      <img id = "extensions-img" class="square responsive-img" src="https://cdn.shopify.com/s/files/1/0553/4351/3784/products/a8262d2b-497f-4e73-a564-6b44d752f601_grande.jpg?v=1615862744" alt="">
+<div class="row">
+  <div class="col s4 section">
+    <img id = "extensions-img" class="square responsive-img" src="https://cdn.shopify.com/s/files/1/0553/4351/3784/products/a8262d2b-497f-4e73-a564-6b44d752f601_grande.jpg?v=1615862744" alt="">
     </div>
-    <div class="col s4 section">
-      <img id = "extensions-img" class="square responsive-img" src="https://i.etsystatic.com/34811563/r/il/857a8e/3823114179/il_1588xN.3823114179_dovg.jpg" alt="">
-    </div>
+  <div class="col s4 section">
+<img id = "extensions-img" class="square responsive-img" src="https://i.etsystatic.com/34811563/r/il/857a8e/3823114179/il_1588xN.3823114179_dovg.jpg" alt="">
+  </div>
     <div class="col s4 section">
       <img id = "extensions-img" class="square responsive-img" src="https://img.freepik.com/premium-vector/dark-brown-transparent-glass-medical-dropper-bottle_83194-685.jpg?w=360" alt="">
-    </div>
-
-  
+  </div>
     {% for product in products %}
-  <div class="col s4 section">
-      <h4 style="text-align: center; font-style: italic; font-size: 20px;">{{product.name}}</h4>
-      <p style="text-align: center;">${{product.price}}</p>
-
-        <form action="{% url 'add_to_cart' order.id product.id%}" method="POST" style="text-align: center;">
+<div class="col s4 section">
+  <h4 style="text-align: center; font-style: italic; font-size: 20px;">{{product.name}}</h4>
+    <p style="text-align: center;">${{product.price}}</p>
+      <form action="{% url 'add_to_cart' order.id product.id%}" method="POST" style="text-align: center;">
           {% csrf_token %}
       <button type="submit" class="btn black">Add to Cart</button>
-      </form>
-
-
-      
+</form>
 <br>
 <br>
 </div>

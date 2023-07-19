@@ -5,28 +5,26 @@
 
 
 <h1 style="font-style: italic; color: rgb(14, 11, 5); font-weight: 100;">{{ order.user }}'s Cart</h1>
-<div class="checkout">
-  <a class="btn green right" href="{% url 'checkout' %}">Checkout</a>
+    <div class="checkout">
+      <a class="btn green right" href="{% url 'checkout' %}">Checkout</a>
   </div>
 <table class="w3-table w3-striped">
   <tr>
       <th>Product</th>
       <th>Price</th>
       </tr>
-  
   {% for product in order.products.all %}
 </tr>
-</table>
-<table class="w3-table w3-striped">
-        <td>{{ product.name }}</h5>
-          <p style="text-align: center;">${{ product.price }}</p>
-      <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
+  </table>
+    <table class="w3-table w3-striped">
+      <td>{{ product.name }}</h5>
+        <p style="text-align: center;">${{ product.price }}</p>
+        <form action="{% url 'remove_from_cart' order.id product.id %}" method="POST">
         {% csrf_token %}
-            <button type="submit" class="btn black">Remove</button>
+        <button type="submit" class="btn black">Remove</button>
       </form>
     {% endfor %}
-
-    <h3>Order Total: ${{order.get_total_price}}</h3>
+<h3>Order Total: ${{order.get_total_price}}</h3>
 
 
 {% endblock %}

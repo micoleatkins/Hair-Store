@@ -14,8 +14,6 @@ urlpatterns = [
     path('products/oil_detail/', views.oil_detail, name='oil_detail'),
     path('products/mask_detail/', views.mask_detail, name='mask_detail'),
     path("cart/", views.cart, name="cart"),
-    path('cart/<int:pk>/delete',
-         views.ProductDelete.as_view(), name='product_delete'),
     path("cart/<int:order_id>/add_to_cart/<int:product_id>",
          views.add_to_cart, name="add_to_cart"),
     path("cart/<int:order_id>/remove_from_cart/<int:product_id>",

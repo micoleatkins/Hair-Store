@@ -4,29 +4,24 @@
 {% endblock %}
 
 
-<h1>Hair Mask</h1>
-
+<h1 style="font-style: italic;">Hair Mask</h1>
 <body>
-    <img class= "responsive-img" style=" width:450px;border-radius: 10px;" src="https://img.freepik.com/premium-photo/small-plastic-jar-mockup-cosmetic-cream-package-3d-rendering_613230-316.jpg?w=1380" alt="Mask">
+  <img class= "responsive-img" style=" width:450px;border-radius: 10px;" src="https://img.freepik.com/premium-photo/small-plastic-jar-mockup-cosmetic-cream-package-3d-rendering_613230-316.jpg?w=1380" alt="Mask">
 </div>
-</div>
-</div>
-<table>
-
-<div class="column">
-<div class="col s6">
-<form action="/mask_detail/" method="submit">
-  <a class="btn black" href="{% url 'extension' %}">Back</a>
-</form>
   </div>
-  </div>
-  
-
-  <p>We take pride in providing our customers with not only the best hair but organic products as well. Our hair mask is made of organic essential oils blended together to create a thick consistency to hydrate your hair. </p>
-  <h5>OUT OF STOCK</h5>
-
-</div>
-</body>
-</html>
+    </div>
+      <table>
+        <div class="column">
+          <div class="col s6">
+            <form action="/mask_detail/" method="submit">
+              <a class="btn black" href="{% url 'extension' %}">Back</a>
+            </form>
+          </div>
+        </div>
+        <p>We take pride in providing our customers with not only the best hair but organic products as well. Our hair mask is made of organic essential oils blended together to create a thick consistency to hydrate your hair. </p>
+        <h5>OUT OF STOCK</h5>
+      </div>
+    </body>
+  </html>
 
 {% endblock %}

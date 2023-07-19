@@ -87,14 +87,9 @@ def cart(request):
     })
 
 
-class ProductDelete(LoginRequiredMixin, DeleteView):
-    model = Product
-    success_url = '/cart'
-
-
 @login_required
 def customers_index(request):
-    customers = Customer.objects.all()
+    customers = Customer.objects.filter(user=request.user)
     return render(request, 'customers/index.html', {
         'customers': customers
     })
