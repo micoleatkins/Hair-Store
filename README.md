@@ -56,4 +56,10 @@
 
 ### **_Credits_**
 
-#####
+1. [Stack Overflow](https://www.stackoverflow.com/)
+2. [Canva](https://www.canva.com)
+3. [Dev Community](https://dev.to/)
+4. [W3 School](https://www.w3schools.com/w3css/w3css_input.asp)
+5. [Django Project](https://docs.djangoproject.com/en/4.2/ref/models/fields/)
+6. [MaterializeCSS](https://materializecss.com/)
+7. [UX Planet](https://uxplanet.org/how-to-create-a-shopping-cart-ui-using-html-css-e5db3cd55aa0)
